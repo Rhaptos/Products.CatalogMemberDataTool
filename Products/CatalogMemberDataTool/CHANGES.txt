@@ -1,0 +1,11 @@
+CatalogMemberDataTool-1.3
+  - add 'status' field to member catalog
+
+CatalogMemberDataTool-1.2
+  - upgrade to Plone 2.5
+
+CatalogMemberDataTool-1.1
+ - i18n Translation Support
+
+CatalogMemberDataTool-1.0
+ - Initial Release

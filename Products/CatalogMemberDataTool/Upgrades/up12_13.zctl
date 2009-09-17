@@ -1,0 +1,3 @@
+app.plone.member_catalog.addColumn('status')
+import transaction
+transaction.commit()

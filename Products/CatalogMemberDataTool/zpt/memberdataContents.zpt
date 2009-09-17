@@ -1,0 +1,28 @@
+<html  xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:tal="http://xml.zope.org/namespaces/tal"
+        xmlns:i18n="http://namespaces.zope.org/i18n" tal:omit-tag="">
+  <span tal:replace="structure here/manage_page_header">Header</span>
+  <span tal:define="manage_tabs_message options/manage_tabs_message | nothing"
+    tal:replace="structure here/manage_tabs">Tabs</span>
+
+  <h2>Membership data tool contents</h2>
+
+  <tal:action tal:condition="request/button_pressed | nothing" tal:replace="here/pruneMemberDataContents" />
+
+  <tal:block tal:define="info python:here.getMemberDataContents()[0]">
+    
+    <p><b>Number of members stored: <span tal:replace="info/member_count">[count]</span></b></p>
+    <p><b>Number of "orphaned" members without user record: <span tal:replace="info/orphan_count">[count]</span></b></p>
+
+    <tal:orphans tal:condition="python:info['orphan_count'] > 0">
+      <form tal:attributes="action template/getId" method="post">
+        <input type="submit" name="button_pressed" value=" Prune orphaned member records "/>
+      </form>
+    </tal:orphans>
+    <tal:no-orphans tal:condition="not:info/orphan_count">
+      <p><b>No pruning needed</b></p>
+    </tal:no-orphans>
+  </tal:block>
+
+  <span tal:replace="structure here/manage_page_footer">Footer</span>
+</html>
