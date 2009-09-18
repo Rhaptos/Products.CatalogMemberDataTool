@@ -1,0 +1,20 @@
+<?xml  version="1.0"?>
+<import-steps>
+  <import-step id="create-mdcatalog" version="20090918-01"
+      handler="Products.CatalogMemberDataTool.exportimport.catalog.createCatalog"
+      title="Create MemberData Catalog">
+    Create the MemberData Catalog
+  </import-step>
+  <import-step id="config-mdcatalog" version="20090918-01"
+      handler="Products.CatalogMemberDataTool.exportimport.catalog.importCatalog"
+      title="Configure MemberData Catalog">
+    <dependency step="create-mdcatalog" />
+    Configure the MemberData catalog
+  </import-step>
+  <import-step id="create-catalogmdtool" version="20090918-01"
+      handler="Products.CatalogMemberDataTool.exportimport.tool.createTool"
+      title="Create MemberDataCatalog Tool">
+    <dependency step="config-mdcatalog"/>
+    Create MemberDataCatalog tool
+  </import-step>
+</import-steps>

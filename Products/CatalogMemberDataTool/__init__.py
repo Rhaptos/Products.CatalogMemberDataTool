@@ -17,8 +17,6 @@ this_module = sys.modules[ __name__ ]
 product_globals = globals()
 tools = ( MemberDataTool.MemberDataTool, PASMemberDataTool.MemberDataTool)
 
-# check installer syntax
-from Extensions import Install
 
 def initialize(context):
     utils.ToolInit('Catalog MemberData Tool',
