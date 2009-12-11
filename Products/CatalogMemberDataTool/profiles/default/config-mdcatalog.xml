@@ -14,6 +14,12 @@
   <index name="email" meta_type="FieldIndex">
     <indexed_attr value="email"/>
   </index>
+  <index name="account_type" meta_type="KeywordIndex">
+    <indexed_attr value="account_type"/>
+  </index>
+  <index name="status" meta_type="KeywordIndex">
+    <indexed_attr value="status"/>
+  </index>
   <index name="getGroups" meta_type="KeywordIndex">
     <indexed_attr value="getGroups"/>
   </index>
