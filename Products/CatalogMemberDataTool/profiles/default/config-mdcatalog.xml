@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<object name="member_catalog" meta_type="ZCatalog">
+  <property name="title">Memberdata catalog</property>
+  <object name="lexicon" meta_type="ZCTextIndex Lexicon">
+    <element name="HTML aware splitter" group="Word Splitter"/>
+    <element name="Case Normalizer" group="Case Normalizer"/>
+    <element name="Remove listed and single char words" group="Stop Words"/>
+  </object>
+  <index name="fullname" meta_type="ZCTextIndex">
+    <indexed_attr value="fullname"/>
+    <extra name="index_type" value="Okapi BM25 Rank"/>
+    <extra name="lexicon_id" value="lexicon"/>
+  </index>
+  <index name="email" meta_type="FieldIndex">
+    <indexed_attr value="email"/>
+  </index>
+  <index name="account_type" meta_type="KeywordIndex">
+    <indexed_attr value="account_type"/>
+  </index>
+  <index name="status" meta_type="KeywordIndex">
+    <indexed_attr value="status"/>
+  </index>
+  <index name="getGroups" meta_type="KeywordIndex">
+    <indexed_attr value="getGroups"/>
+  </index>
+  <index name="getUserName" meta_type="FieldIndex">
+    <indexed_attr value="getUserName"/>
+  </index>
+  <index name="last_login_time" meta_type="DateIndex">
+    <indexed_attr value="last_login_time"/>
+    <property name="index_naive_time_as_local">True</property>
+  </index>
+  <index name="listed" meta_type="FieldIndex">
+    <indexed_attr value="listed"/>
+  </index>
+  <index name="login_time" meta_type="DateIndex">
+    <indexed_attr value="login_time"/>
+    <property name="index_naive_time_as_local">True</property>
+  </index>
+  <column value="email"/>
+  <column value="fullname"/>
+  <column value="getGroups"/>
+  <column value="getId"/>
+  <column value="getUserName"/>
+  <column value="status"/>
+</object>

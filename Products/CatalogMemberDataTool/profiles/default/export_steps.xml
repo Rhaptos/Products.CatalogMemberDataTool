@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<export-steps>
+  <export-step id="config-mdcatalog" title=""
+      handler="Products.CatalogMemberDataTool.exportimport.catalog.exportCatalog">
+    Export MemberData catalog configuration
+  </export-step>
+</export-steps>
+
