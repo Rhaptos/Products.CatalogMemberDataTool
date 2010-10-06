@@ -17,6 +17,12 @@ def createTool(context):
     portal.manage_addProduct['CatalogMemberDataTool'].manage_addTool(
             'PlonePAS-aware Catalog MemberData Tool', None)
     md = getToolByName(portal, 'portal_memberdata')
+
+    # hack the tool registry so we don't get replaced next GenericSetup import
+    setuptool = getToolByName(portal,'portal_setup')
+    setuptool._toolset_registry._required['portal_memberdata']['class']='Products.CatalogMemberDataTool.PASMemberDataTool.MemberDataTool'
+    setuptool._p_changed=True
+
     logger.info('Added Catalog MemberData tool')
 
     # Migrate old data
@@ -44,6 +50,11 @@ def createTool(context):
                 if value is not None:
                     props[prop] = value
             new_obj.setMemberProperties(props)
+        # move portraits, if any
+        if hasattr(orig_md,'portraits'):
+            md = getToolByName(portal,'portal_memberdata')
+            for id,img in orig_md.portraits.items():
+                md.portraits[id] = img
 
         logger.info("Migrated Member Data")
 
