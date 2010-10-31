@@ -11,6 +11,10 @@ being correctly implemented::
     True
     >>> MemberDataTool.meta_type == 'Catalog MemberData Tool'
     True
-    >>> type(MemberDataTool. __implements__)
-    <class 'Interface._InterfaceClass.Interface'>
+    >>> from zope.interface import implementedBy
+
+# XXX: This will probably fail and we need to check the output of implementedBy
+
+    >>> list(implementedBy(MemberDataTool))
+    [<class 'Interface._InterfaceClass.Interface'>]
 

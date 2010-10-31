@@ -16,6 +16,7 @@ CMFPlone.MemberDataTool
 """
 $Id: MemberDataTool.py,v 1.1 2005/05/31 17:23:11 brentmh Exp $
 """
+from zope.interface import implements
 
 import AccessControl
 from Globals import InitializeClass
@@ -47,7 +48,7 @@ def addMemberDataTool(self,REQUEST=None):
 class MemberDataTool(UniqueObject, BTreeFolder2):
     """Stores MemberData objects in a folder so they can be cataloged"""
 
-    __implements__ = (IMemberDataTool)
+    implements(IMemberDataTool)
 
     id = 'portal_memberdata'
     meta_type = 'Catalog MemberData Tool'
@@ -212,7 +213,7 @@ InitializeClass(MemberDataTool)
 
 class MemberData(BaseMemberData):
 
-    __implements__ = IMemberData
+    implements(IMemberData)
 
     security = AccessControl.ClassSecurityInfo()
 
