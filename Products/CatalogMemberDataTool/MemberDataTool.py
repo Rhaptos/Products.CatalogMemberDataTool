@@ -23,7 +23,7 @@ from Acquisition import aq_base, aq_parent, aq_inner
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.BTreeFolder2.BTreeFolder2 import BTreeFolder2
 from Products.CMFCore.utils import UniqueObject, getToolByName
-from Products.CMFCore.CMFCorePermissions import ManagePortal, ViewManagementScreens
+from Products.CMFCore.permissions import ManagePortal, ViewManagementScreens
 
 # We'll use Plone's MemberData if it's present
 try:
