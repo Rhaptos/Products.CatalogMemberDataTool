@@ -27,7 +27,7 @@ class TestMemberDataTool(PloneTestCase.PloneTestCase):
 
     def testInterface(self):
         """MemberDataTool must implement IMemberDataTool"""
-        from Products.CMFCore.interfaces.portal_memberdata import portal_memberdata as IMemberDataTool
+        from Products.CMFCore.interfaces import IMemberDataTool
         self.failUnless(IMemberDataTool.isImplementedBy(self.memberdata))
                 
     def testRegisterMemberData(self):

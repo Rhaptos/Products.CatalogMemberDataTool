@@ -32,8 +32,7 @@ try:
 except ImportError:
     from Products.CMFCore.MemberDataTool import MemberData as BaseMemberData
 
-from Products.CMFCore.interfaces.portal_memberdata import portal_memberdata as IMemberDataTool
-from Products.CMFCore.interfaces.portal_memberdata import MemberData as IMemberData
+from Products.CMFCore.interfaces import IMemberData, IMemberDataTool
 
 MEMBER_CATALOG = 'member_catalog'
 
