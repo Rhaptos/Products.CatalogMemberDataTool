@@ -1,3 +1,6 @@
+CatalogMemberDataTool-1.5
+  - fixup generic setup to correctly overwrite 'required' portal tool
+
 CatalogMemberDataTool-1.4
   - generic setup refactor - Rhaptos 2.0 release
 
